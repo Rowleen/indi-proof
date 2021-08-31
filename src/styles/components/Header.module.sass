@@ -1,0 +1,47 @@
+@import src/styles/variables
+
+.header
+  width: 100%
+  background-color: $secondary-color
+
+  .headerContainer
+    width: 100%
+    max-width: $max-width
+    display: grid
+    grid-template-columns: 1fr 1fr
+
+  .logoContainer
+    width: 100%
+    display: flex
+    justify-content: flex-start
+
+    a
+      display: flex
+      justify-content: flex-start
+      align-items: center
+      color: $tertiary-color
+
+    .logo
+      width: 4rem
+      height: auto
+      animation: App-logo-spin infinite 20s linear
+
+  .navContainer
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+
+    .link
+      display: flex
+      justify-content: center
+      align-items: center
+      color: $tertiary-color
+
+      &:hover
+        color: $primary-color
+
+@keyframes App-logo-spin
+  from
+    transform: rotate(0deg)
+
+  to
+    transform: rotate(360deg)
