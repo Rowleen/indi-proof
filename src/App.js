@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { getProducts } from './api/product'
 import { useDispatch, useSelector } from 'react-redux'
 import logo from './logo.svg'
-import './App.css'
+import styles from './styles/App.module.sass'
 
 function App() {
   const dispatch = useDispatch()
@@ -37,8 +37,8 @@ function App() {
     }
   }, [])
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className={styles.App}>
+      <header className={styles.AppHeader}>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
