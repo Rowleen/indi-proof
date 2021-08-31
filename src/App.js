@@ -1,7 +1,12 @@
-import logo from "./logo.svg"
-import "./App.css"
+import { useEffect } from 'react'
+import { getProducts } from './api/product'
+import logo from './logo.svg'
+import './App.css'
 
 function App() {
+  useEffect(() => {
+    getProducts().then((products) => console.log(products))
+  }, [])
   return (
     <div className="App">
       <header className="App-header">
