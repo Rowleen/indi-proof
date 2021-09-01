@@ -1,5 +1,6 @@
 import React from 'react'
 import logo from 'src/logo.svg'
+import { Searcher } from 'src/components'
 import styles from 'src/styles/components/Header.module.sass'
 
 const Header = () => {
@@ -23,6 +24,8 @@ const Header = () => {
           <a className={styles.link} href="#">
             Carrito
           </a>
+
+          <Searcher />
         </nav>
       </div>
     </header>
