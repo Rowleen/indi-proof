@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { getProducts } from './api/product'
 import { useDispatch, useSelector } from 'react-redux'
 import { setProducts } from './redux/actions'
+import { Products } from 'src/components'
 import styles from './styles/App.module.sass'
 
 function App() {
@@ -35,19 +36,7 @@ function App() {
   }, [])
   return (
     <div className={styles.App}>
-      <header className={styles.AppHeader}>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Products />
     </div>
   )
 }
