@@ -2,6 +2,8 @@
 
 .header
   width: 100%
+  display: flex
+  justify-content: center
   background-color: $secondary-color
 
   .headerContainer
@@ -27,17 +29,23 @@
       animation: App-logo-spin infinite 20s linear
 
   .navContainer
-    display: grid
-    grid-template-columns: repeat(3, 1fr)
+    display: flex
+    justify-content: flex-end
 
     .link
       display: flex
       justify-content: center
       align-items: center
       color: $tertiary-color
+      padding: 0 1rem
+      margin-right: 2rem
 
       &:hover
         color: $primary-color
+        background-color: rgba($secondary-color, .5)
+
+      &:last-child
+        margin-right: unset
 
 @keyframes App-logo-spin
   from
