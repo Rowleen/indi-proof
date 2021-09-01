@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { getProducts } from './api/product'
 import { useDispatch, useSelector } from 'react-redux'
+import { setProducts } from './redux/actions'
 import styles from './styles/App.module.sass'
 
 function App() {
@@ -13,10 +14,7 @@ function App() {
     if (!feedDate) {
       getProducts()
         .then((products) => {
-          dispatch({
-            type: 'SET_PRODUCTS',
-            payload: { products: products.data, feedDate: date },
-          })
+          dispatch(setProducts({ products: products.data, feedDate: date }))
         })
         .catch((err) => console.log(err))
     } else {

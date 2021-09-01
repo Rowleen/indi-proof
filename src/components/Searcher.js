@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 
 import styles from 'src/styles/components/Searcher.module.sass'
@@ -7,7 +7,7 @@ const Searcher = () => {
   const dispatch = useDispatch()
   const [search, setSearch] = useState({
     term: '',
-    brand: false,
+    brand: true,
     model: false,
   })
 
@@ -24,15 +24,19 @@ const Searcher = () => {
   const handleOnChangeForm = () =>
     dispatch({ type: 'SET_SEARCH', payload: search })
 
+  useEffect(() => {
+    setTimeout(() => handleOnChangeForm(), 500)
+  }, [search])
+
   return (
     <div className={styles.searcher}>
-      <form className={styles.form} onChange={handleOnChangeForm}>
+      <form className={styles.form}>
         <input
           className={styles.searcher__input}
           type="text"
           name="term"
           placeholder="Búsqueda"
-          onChange={handleOnChange}
+          onKeyUp={handleOnChange}
         />
 
         <div className={styles.filters}>
@@ -42,7 +46,8 @@ const Searcher = () => {
               id="brand"
               name="filter"
               value="brand"
-              onChange={handleOnChange}
+              onClick={handleOnChange}
+              defaultChecked
             />
             Marca
           </label>
@@ -53,7 +58,7 @@ const Searcher = () => {
               id="model"
               name="filter"
               value="model"
-              onChange={handleOnChange}
+              onClick={handleOnChange}
             />
             Modelo
           </label>
