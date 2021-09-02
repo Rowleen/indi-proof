@@ -8,3 +8,7 @@ export const setProducts = (payload) => {
 export const setSearch = (payload) => {
   return { type: 'SET_SEARCH', payload }
 }
+
+export const setItem = (payload) => {
+  return { type: 'SET_ITEM', payload }
+}

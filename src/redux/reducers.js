@@ -18,6 +18,11 @@ const setProducts = (state = [], action) => {
         ),
         searching: { term: action.payload.term },
       }
+    case 'SET_ITEM':
+      return {
+        ...state,
+        cart: state.cart + action.payload.count,
+      }
     default:
       return state
   }

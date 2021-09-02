@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { getProductDetail, addProductToCart } from 'src/api/product'
+import { setItem } from 'src/redux/actions'
 import { ColorButton, Storage } from 'src/components'
 import classNames from 'classnames'
 import propTypes from 'prop-types'
@@ -9,6 +11,7 @@ import styles from 'src/styles/pages/ProductDetails.module.sass'
 
 const ProductDetails = () => {
   const { id } = useParams()
+  const dispatch = useDispatch()
   const [product, setProduct] = useState({})
   const [options, setOptions] = useState({
     id,
@@ -51,7 +54,7 @@ const ProductDetails = () => {
 
   const handleOnBuy = () => {
     addProductToCart(options)
-      .then((response) => console.log(response))
+      .then((response) => dispatch(setItem(response.data)))
       .catch((error) => console.log(error))
   }
 

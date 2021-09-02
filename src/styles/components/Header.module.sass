@@ -33,7 +33,9 @@
     justify-content: flex-end
 
     .link
+      position: relative
       display: flex
+      flex-direction: column
       justify-content: center
       align-items: center
       color: $tertiary-color
@@ -46,6 +48,21 @@
 
       &:last-child
         margin-right: unset
+
+      .shopingCart, .gitHub, .home
+        font-size: 1.5rem
+
+      .shopingCart
+        margin-bottom: .5rem
+
+      .count
+        position: absolute
+        right: .5rem
+        bottom: 1rem
+        background-color: $primary-color
+        color: $tertiary-color
+        border-radius: 50%
+        padding: .1rem .4rem
 
 @keyframes App-logo-spin
   from
