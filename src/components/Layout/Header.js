@@ -46,7 +46,7 @@ const Header = () => {
         <nav className={navContainer}>
           <div className={styles.link}>
             <i className={shopingCart}></i>
-            <span className={styles.count}>{cart || 0}</span>
+            <span className={styles.count}>{cart}</span>
           </div>
         </nav>
       </div>

@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux'
+import initialState from './initialState'
 
-const setProducts = (state = [], action) => {
+const setProducts = (state = initialState, action) => {
   switch (action.type) {
     case 'SET_PRODUCTS':
       return {
