@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { Link, useHistory, useLocation, withRouter } from 'react-router-dom'
 import classNames from 'classnames'
 import { isMobile } from 'react-device-detect'
 import logo from 'src/logo.svg'
@@ -7,6 +8,9 @@ import logo from 'src/logo.svg'
 import styles from 'src/styles/components/Header.module.sass'
 
 const Header = () => {
+  const history = useHistory()
+  const location = useLocation()
+
   const cart = useSelector((state) => state.products.cart)
 
   const shopingCart = classNames({
@@ -20,14 +24,23 @@ const Header = () => {
     [styles.mobile]: isMobile,
   })
 
+  const angleLeft = classNames({
+    fas: true,
+    'fa-angle-left': true,
+    [styles.angleLeft]: true,
+    [styles.hidden]: location.pathname === '/',
+  })
+
   return (
     <header className={styles.header}>
       <div className={styles.headerContainer}>
         <div className={styles.logoContainer}>
-          <a href="#">
+          <i className={angleLeft} onClick={() => history.goBack()}></i>
+
+          <Link to="/">
             <img src={logo} className={styles.logo} alt="logo" />
             IndiProof
-          </a>
+          </Link>
         </div>
 
         <nav className={navContainer}>
@@ -41,4 +54,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default withRouter(Header)
