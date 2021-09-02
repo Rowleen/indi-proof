@@ -22,13 +22,10 @@ function App() {
       const lastDate = new Date(feedDate)
       const diff = date.getTime() - lastDate.getTime()
 
-      if (diff > 60000) {
+      if (diff > 3600000) {
         getProducts()
           .then((products) =>
-            dispatch({
-              type: 'SET_PRODUCTS',
-              payload: { products: products.data, feedDate: date },
-            })
+            dispatch(setProducts({ products: products.data, feedDate: date }))
           )
           .catch((err) => console.log(err))
       }

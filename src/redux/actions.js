@@ -1,6 +1,6 @@
 export const setProducts = (payload) => {
   return {
-    type: 'GET_PRODUCTS',
+    type: 'SET_PRODUCTS',
     payload,
   }
 }
