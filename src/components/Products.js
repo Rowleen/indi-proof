@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { Product } from 'src/components'
+import { Product, Searcher } from 'src/components'
 import styles from 'src/styles/components/Products.module.sass'
 
 const Products = () => {
@@ -17,7 +17,12 @@ const Products = () => {
     />
   ))
 
-  return <section className={styles.products}>{productsList}</section>
+  return (
+    <>
+      <Searcher />
+      <section className={styles.products}>{productsList}</section>
+    </>
+  )
 }
 
 export default Products

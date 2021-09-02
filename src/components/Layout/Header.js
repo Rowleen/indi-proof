@@ -2,7 +2,6 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import logo from 'src/logo.svg'
 import classNames from 'classnames'
-import { Searcher } from 'src/components'
 
 import styles from 'src/styles/components/Header.module.sass'
 
@@ -55,8 +54,6 @@ const Header = () => {
             <i className={shopingCart}></i>
             <span className={styles.count}>{cart}</span>
           </div>
-
-          <Searcher />
         </nav>
       </div>
     </header>

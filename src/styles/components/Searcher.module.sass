@@ -1,10 +1,18 @@
 @import ../variables
 
 .searcher
-  padding: 1rem 0
+  width: 100%
+  display: flex
+  justify-content: flex-end
 
   .form
     display: flex
+
+    .input
+      padding: 0 .5rem
+      border-radius: .5rem
+      border: solid 1px $secondary-color
+      margin-right: 1rem
 
     .filters
       display: flex
@@ -13,8 +21,11 @@
       .filter
         display: flex
         align-items: center
-        color: $tertiary-color
+        color: $secondary-color
         margin-bottom: .5rem
 
         &:last-child
           margin-bottom: unset
+
+        input
+          margin-right: .5rem

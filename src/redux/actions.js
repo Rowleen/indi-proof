@@ -5,7 +5,7 @@ export const setProducts = (payload) => {
   }
 }
 
-export const setSearch = (payload) => {
+export const setSearching = (payload) => {
   return { type: 'SET_SEARCH', payload }
 }
 

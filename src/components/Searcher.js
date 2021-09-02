@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
+import { setSearching } from 'src/redux/actions'
 
 import styles from 'src/styles/components/Searcher.module.sass'
 
@@ -21,8 +22,7 @@ const Searcher = () => {
     if (name === 'term') setSearch({ ...search, term: value })
   }
 
-  const handleOnChangeForm = () =>
-    dispatch({ type: 'SET_SEARCH', payload: search })
+  const handleOnChangeForm = () => dispatch(setSearching(search))
 
   useEffect(() => {
     setTimeout(() => handleOnChangeForm(), 500)
@@ -32,7 +32,7 @@ const Searcher = () => {
     <div className={styles.searcher}>
       <form className={styles.form}>
         <input
-          className={styles.searcher__input}
+          className={styles.input}
           type="text"
           name="term"
           placeholder="Búsqueda"
