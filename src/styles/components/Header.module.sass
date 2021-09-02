@@ -1,11 +1,14 @@
-@import src/styles/variables
+@import ../variables
+@import ../includeMedia
 
 .header
+  position: relative
   width: 100%
   display: flex
   justify-content: center
   background-color: $secondary-color
   margin-bottom: 2rem
+  padding: .5rem 0
 
   .headerContainer
     width: 100%
@@ -50,16 +53,13 @@
       &:last-child
         margin-right: unset
 
-      .shopingCart, .gitHub, .home
-        font-size: 1.5rem
-
       .shopingCart
-        margin-bottom: .5rem
+        font-size: 1.5rem
 
       .count
         position: absolute
-        right: .5rem
-        bottom: 1rem
+        right: .2rem
+        bottom: 0
         background-color: $primary-color
         color: $tertiary-color
         border-radius: 50%
@@ -71,3 +71,7 @@
 
   to
     transform: rotate(360deg)
+
+@include media("<=desktop", "portrait")
+  .header
+    padding: .5rem

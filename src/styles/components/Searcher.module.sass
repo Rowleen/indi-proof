@@ -1,4 +1,5 @@
 @import ../variables
+@import ../includeMedia
 
 .searcher
   width: 100%
@@ -29,3 +30,11 @@
 
         input
           margin-right: .5rem
+
+@include media("<=phone", "portrait")
+  .searcher
+    justify-content: center
+
+@include media(">=tablet", "<=desktop", "portrait")
+  .searcher
+    padding-right: 1.5rem

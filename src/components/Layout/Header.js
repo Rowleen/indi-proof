@@ -1,7 +1,8 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import logo from 'src/logo.svg'
 import classNames from 'classnames'
+import { isMobile } from 'react-device-detect'
+import logo from 'src/logo.svg'
 
 import styles from 'src/styles/components/Header.module.sass'
 
@@ -14,16 +15,9 @@ const Header = () => {
     [styles.shopingCart]: true,
   })
 
-  const gitHub = classNames({
-    fab: true,
-    'fa-github-alt': true,
-    [styles.gitHub]: true,
-  })
-
-  const home = classNames({
-    fas: true,
-    'fa-home': true,
-    [styles.home]: true,
+  const navContainer = classNames({
+    [styles.navContainer]: true,
+    [styles.mobile]: isMobile,
   })
 
   return (
@@ -36,23 +30,10 @@ const Header = () => {
           </a>
         </div>
 
-        <nav className={styles.navContainer}>
-          <a className={styles.link} href="#">
-            <i className={home}></i>
-            Inicio
-          </a>
-          <a
-            className={styles.link}
-            href="https://github.com/Rowleen/indi-proof"
-            target="blank"
-            title="Repositorio en GitHub"
-          >
-            <i className={gitHub}></i>
-            GitHub
-          </a>
+        <nav className={navContainer}>
           <div className={styles.link}>
             <i className={shopingCart}></i>
-            <span className={styles.count}>{cart}</span>
+            <span className={styles.count}>{cart || 0}</span>
           </div>
         </nav>
       </div>
