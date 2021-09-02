@@ -10,6 +10,7 @@ const Products = () => {
     <Product
       brand={product.brand}
       image={product.imgUrl}
+      id={product.id}
       key={`${product.model}-${index}`}
       model={product.model}
       price={product.price}

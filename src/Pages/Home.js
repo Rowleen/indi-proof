@@ -1,9 +1,9 @@
 import { useEffect } from 'react'
-import { getProducts } from './api/product'
+import { getProducts } from '../api/product'
 import { useDispatch, useSelector } from 'react-redux'
-import { setProducts } from './redux/actions'
+import { setProducts } from '../redux/actions'
 import { Products } from 'src/components'
-import styles from './styles/App.module.sass'
+import styles from 'src/styles/Home.module.sass'
 
 function App() {
   const dispatch = useDispatch()
@@ -35,7 +35,7 @@ function App() {
     }
   }, [])
   return (
-    <div className={styles.App}>
+    <div className={styles.home}>
       <Products />
     </div>
   )

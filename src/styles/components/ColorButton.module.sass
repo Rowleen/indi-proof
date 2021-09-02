@@ -1,0 +1,15 @@
+@import src/styles/variables
+
+.colorButton
+  cursor: pointer
+  width: 2rem
+  height: 2rem
+  margin-right: .5rem
+  border-radius: 50%
+  border: solid 3px $secondary-color !important
+
+  &:last-child
+    margin-right: unset
+
+  &.selected
+    border-color: $quaternary-color !important

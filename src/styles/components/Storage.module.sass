@@ -1,0 +1,15 @@
+@import src/styles/variables
+
+.storage
+  cursor: pointer
+  padding: .5rem 1rem
+  border: solid 1px $primary-color
+  border-radius: .5rem
+  margin-right: 1rem
+
+  &:hover, &.selected
+    background-color: $primary-color
+    color: $tertiary-color
+
+  &:last-child
+    margin-right: unset
